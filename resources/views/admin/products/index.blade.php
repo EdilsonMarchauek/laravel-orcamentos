@@ -32,8 +32,6 @@
                         @endforeach
                     </select>
                     <input type="text" name="name" placeholder="Nome:" class="form-control" value="{{ $filters['name'] ?? '' }}">
-                    <input type="text" name="price" placeholder="Preço:" class="form-control" value="{{ $filters['price'] ?? '' }}">
-
                     <button type="submit" class="btn btn-success">Pesquisar</button>
                 </form>
             </div>
@@ -47,10 +45,10 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Imagem</th>
+                            <th scope="col" width="100">Imagem</th>
                             <th scope="col">Nome</th>
-                            <th scope="col">Categoria</th>
-                            <th scope="col">Preço</th>
+                            <th scope="col">Console</th>
+                            <th scope="col">Descrição</th>
                             <th width="150px" scope="col">Ações</th>
                         </tr>                   
                     </thead>
@@ -64,7 +62,7 @@
                             </td>  
                             <td scope="row">{{ $product->name }}</td>
                             <td>{{ $product->category->title??null }}</td>
-                            <td>R$ {{ $product->price }}</td>
+                            <td>{{ $product->description }}</td>
                             <td>
                                 <a href="{{ route('products.edit', $product->id)}}" class="badge bg-gradient-yellow">
                                     Editar

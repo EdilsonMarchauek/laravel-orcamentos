@@ -29,7 +29,7 @@ class ProductController extends Controller
     {
         //Pegando todos os produtos - with trás o relacionamento de category
         $products = $this->repository
-                            ->orderBy('id')
+                            ->orderBy('name')
                             ->relationships('category')
                             ->paginate();
 
@@ -126,7 +126,11 @@ class ProductController extends Controller
             $data['photo'] = $imagePath;
         }
     
-        $this->repository->update($id, array_merge($request->all(), $data));
+        if(isset($data)){
+            $this->repository->update($id, array_merge($request->all(), $data));
+        }else{
+            $this->repository->update($id, $request->all());    
+        }
 
         return redirect()
                         ->route('products.index')
@@ -141,9 +145,13 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {       
-        // if ($this->repository::property_exists('photo') && Storage::exists($this->repository::property_exists('photo')) {
-        //     Storage::delete($this->repository::property_exists('photo'));
-        // }  
+        $product = $this->repository->findById($id);
+        if(!$product)
+          return redirect()->back();
+
+        if ($product->photo && Storage::exists($product->photo)) {
+            Storage::delete($product->photo);
+        }  
 
         $this->repository->delete($id);
 

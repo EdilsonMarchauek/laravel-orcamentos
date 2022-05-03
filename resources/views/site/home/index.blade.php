@@ -21,7 +21,6 @@
                     @endforeach
                 </select>
                 <input type="text" name="name" placeholder="Nome:" value="{{ $filters['name'] ?? '' }}" class="form-control">
-                <input type="text" name="price" placeholder="Preço:" value="{{ $filters['price'] ?? '' }}" class="form-control">
                 <button type="submit" class="btn btn-success">Pesquisar</button>
             </div>
                
@@ -38,22 +37,22 @@
                 <tr>
                     <th scope="col" width="100">Imagem</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col">Preço</th>
+                    <th scope="col">Console</th>
+                    <th scope="col">Descrição</th>
                     <th width="150px" scope="col">Ações</th>
                 </tr>                   
             </thead>
             <tbody>
                 @foreach ($products as $product)
                 <tr>
-                    <td scope="row">
+                    <td valign="center">
                         @if ($product->photo)
-                            <img  height="165" src="{{ URL("storage/{$product->photo}") }}" alt="{{ $product->name }}">
+                                    <img width="130" height="165" src="{{ URL("storage/{$product->photo}") }}" alt="{{ $product->name }}">
                         @endif
-                    </td>  
-                    <td>{{ $product->name }}</td>
+                    </td>
+                    <td scope="row">{{ $product->name }}</td>
                     <td>{{ $product->category->title??null }}</td>
-                    <td>R$ {{ $product->price }}</td>
+                    <td>R$ {{ $product->description }}</td>
                     <td>
                         <a href="{{ route('site.show', $product->id)}}">
                             Detalhes
@@ -74,5 +73,14 @@
    </div>
 </div>
 
-@endsection
+@stop
+
+@section('css')
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/css/adminlte.min.css" rel="stylesheet">
+@stop
+
+@section('js')
+    <script src="/js/app.js"></script>
+@stop
 

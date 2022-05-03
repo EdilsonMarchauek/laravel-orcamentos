@@ -19,11 +19,17 @@
 @section('content')
 <div class="content row">
 
+    <div align="left" style="padding-bottom:10px">
+        @if ($product->photo)
+        <img width="130" height="165" src="{{ URL("storage/{$product->photo}") }}" alt="{{ $product->name }}">
+        @endif
+    </div>
+    
     <div class="card card-outline card-success" >
         <div class="box-body" style="padding: 10px">
 
             @include ('admin.includes.alerts')
-            
+           
             {{-- <form action="{{ route('products.update', $product->id) }}" method="POST" class="form">
                 @method('PUT')
                 @include ('admin.products._partials.form')

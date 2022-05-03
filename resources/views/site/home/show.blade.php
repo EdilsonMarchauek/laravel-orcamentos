@@ -30,7 +30,6 @@
                 <p><strong>ID: </strong>{{ $product->id }}</p>
                 <p><strong>Nome: </strong>{{ $product->name }}</p>
                 <p><strong>Categoria: </strong>{{ $product->category->title }}</p>
-                <p><strong>Preço: </strong>{{ $product->price }}</p>
                 <p><strong>Descrição: </strong>{{ $product->description }}</p>
 
                 <hr>

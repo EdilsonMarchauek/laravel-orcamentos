@@ -18,7 +18,7 @@
 
     <div align="left">
         @if ($product->photo)
-        <img src="{{ URL("storage/{$product->photo}") }}" alt="{{ $product->name }}">
+        <img width="130" height="165" src="{{ URL("storage/{$product->photo}") }}" alt="{{ $product->name }}">
         @endif
     </div>
     
@@ -29,8 +29,7 @@
             <div class="box-body">
                 <p><strong>ID: </strong>{{ $product->id }}</p>
                 <p><strong>Nome: </strong>{{ $product->name }}</p>
-                <p><strong>Categoria: </strong>{{ $product->category->title }}</p>
-                <p><strong>Preço: </strong>{{ $product->price }}</p>
+                <p><strong>Console: </strong>{{ $product->category->title }}</p>
                 <p><strong>Descrição: </strong>{{ $product->description }}</p>
 
                 <hr>
