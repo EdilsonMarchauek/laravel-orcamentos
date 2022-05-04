@@ -8,7 +8,7 @@
     </span>
 
     <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="{{ route('home') }}"> Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin') }}"> Dashboard</a></li>
         <li class="breadcrumb-item"><a href="{{ route('categories.index') }}"> Categorias</a></li>
         <li class="breadcrumb-item"><a href="{{ route('categories.show', $category->id) }}"> Detalhes</a></li>
     </ol>  

@@ -29,8 +29,8 @@ class StoreUpdateProductFormRequest extends FormRequest
         return [
             //pega o $id e compara se na coluna name id é igual ao id abrindo exceção
             'name'          => "required|min:3|max:100|unique:products,name,{$id},id",
-            //'url'           => "required|min:3|max:100|unique:products,url,{$id},id",
-            //'price'         => 'required',
+            'url'           => "required|min:3|max:100|unique:products,url,{$id},id",
+            'price'         => 'required',
             'description'   => 'max:9000',
             //Especial obrigatório e precisa existir na tabela categories
             'category_id'   => 'required|exists:categories,id',

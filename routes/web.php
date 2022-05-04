@@ -28,30 +28,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
 Auth::routes(['register' => false]);
 
-Route::get('/index', [SiteController::class, 'index']);
+Route::get('/', [SiteController::class, 'index']);
 Route::any('/search', [SiteController::class, 'search'])->name('site.search');
 Route::resource('site', SiteController::class);
 Route::get('/inicio', [SiteController::class, 'index'])->name('site.inicio');;
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/teste', function () {
-    return storage_path();
- });
 
- Route::get('/link', function () {
-    $target = '/var/www/html/divulguenaweb.com.br/web/lara/storage/app/public';
-    $shorcut = '/var/www/html/divulguenaweb.com.br/web/storage';
-    symlink($target, $shorcut);
- });
-
- Route::get('/clear', function() {
-
-    Artisan::call('cache:clear');
-    
-    dd("Cache Clear All");
-
-});
 
 
 

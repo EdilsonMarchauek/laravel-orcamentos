@@ -37,7 +37,7 @@
                 <tr>
                     <th scope="col" width="100">Imagem</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">Console</th>
+                    <th scope="col">Categoria</th>
                     <th scope="col">Descrição</th>
                     <th width="150px" scope="col">Ações</th>
                 </tr>                   

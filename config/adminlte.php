@@ -16,7 +16,7 @@ return [
 
     'title' => 'Curso Laravel',
     'title_prefix' => '',
-    'title_postfix' => ' - Luna Design',
+    'title_postfix' => ' - Luna Sistemas',
 
     /*
     |--------------------------------------------------------------------------
@@ -188,7 +188,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
